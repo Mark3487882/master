@@ -1,0 +1,39 @@
+{
+	"name": "EmailFailNotification",
+	"properties": {
+		"activities": [
+			{
+				"name": "EmailFailNotification",
+				"description": "",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-19.eastus.logic.azure.com:443/workflows/59697941e2b54be6a3f385465a57dbf0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Kc143OCcxpgqJ0-gK8AE5CkDd9PyJYgKXIHAwxgBs4Q",
+					"method": "POST",
+					"body": {
+						"title": "PIPELINE RUN FAILED!",
+						"message": "THIS PIPELINE RUNNING FAILED!",
+						"color": "Green",
+						"dataFactoryName": "@{pipeline().DataFactory}",
+						"pipelineName": "@{pipeline().Pipeline}",
+						"pipelineRunId": "@{pipeline().RunId}",
+						"RunningTime": "@{utcnow()}"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "linm2"
+		},
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

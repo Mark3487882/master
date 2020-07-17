@@ -1,0 +1,25 @@
+{
+	"name": "linm2_scheduletrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "3_4_2_linm2_specifid_efectvdt",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 5,
+				"startTime": "2020-07-07T19:53:00Z",
+				"endTime": "2020-07-07T20:08:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

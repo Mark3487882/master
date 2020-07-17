@@ -1,0 +1,25 @@
+{
+	"name": "linm2_EventTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "3_2_linm2_eventtrigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/triggerdemo/blobs/input/",
+			"blobPathEndsWith": "sourcedata1.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/7ad1db7d-15d0-4935-ac4b-74f0f8e86be8/resourceGroups/MarketingRG/providers/Microsoft.Storage/storageAccounts/sqlvaqcn2qpbmvyt22",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"name": "flow1_completed",
+	"properties": {
+		"description": "flag flow1 runs successfully",
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "flow1_completed_flag.csv",
+				"folderPath": "marketing/linm2_trigger_file/flow1",
+				"fileSystem": "marketinganalyticdata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

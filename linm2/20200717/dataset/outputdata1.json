@@ -1,0 +1,24 @@
+{
+	"name": "outputdata1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADFTriggerLINM2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "outputdata1",
+				"folderPath": "output",
+				"container": "triggerdemo"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

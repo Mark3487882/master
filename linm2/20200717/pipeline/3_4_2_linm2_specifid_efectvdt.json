@@ -1,0 +1,64 @@
+{
+	"name": "3_4_2_linm2_specifid_efectvdt",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Specify Hidate",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/07_Scheduling_Test/linm2_parameter_test",
+					"baseParameters": {
+						"input": {
+							"value": "@variables('Hidate')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LinkedDataBricks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Specify Hidate",
+				"description": "1. Hidate without quotes, for example:  2020-03-31\n\n2. Without user specified, the Hidate default value is current date. for example:  @formatDateTime(utcnow(), 'yyyy-MM-dd')",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Hidate",
+					"value": {
+						"value": "@formatDateTime(utcnow(), 'yyyy-MM-dd')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"Hidate": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "linm2"
+		},
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
