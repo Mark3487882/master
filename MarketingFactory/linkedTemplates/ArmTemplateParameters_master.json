@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "MarketingFactory"
+		},
+		"ADFTriggerLINM2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"LinkedDataBricks_accessToken": {
+			"value": ""
+		},
+		"ProdClusterDatabricks_accessToken": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://marketingsa1.dfs.core.windows.net"
+		},
+		"Flow2_Trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/7ad1db7d-15d0-4935-ac4b-74f0f8e86be8/resourceGroups/MarketingRG/providers/Microsoft.Storage/storageAccounts/marketingsa1"
+		},
+		"linm2_EventTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/7ad1db7d-15d0-4935-ac4b-74f0f8e86be8/resourceGroups/MarketingRG/providers/Microsoft.Storage/storageAccounts/sqlvaqcn2qpbmvyt22"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
